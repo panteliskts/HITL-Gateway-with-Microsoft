@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* =====================================================================
+   Theme Variables — SOC (Security Operations Center) Palette
+   ===================================================================== */
+
+:root {
+  /* Light mode — clean enterprise slate */
+  --hitl-base:           248 250 252;    /* slate-50 */
+  --hitl-surface:        255 255 255;    /* white */
+  --hitl-surface-hover:  241 245 249;    /* slate-100 */
+  --hitl-pending:        202 138 4;      /* amber-600 */
+  --hitl-approved:       22 163 74;      /* green-600 */
+  --hitl-rejected:       220 38 38;      /* red-600 */
+  --hitl-escalated:      220 38 38;
+  --hitl-active:         37 99 235;      /* blue-600 */
+  --hitl-klein-blue:     0 47 167;
+  --hitl-muted:          148 163 184;    /* slate-400 */
+  --hitl-secondary:      100 116 139;    /* slate-500 */
+
+  --hitl-text-primary:   #0f172a;        /* slate-900 */
+  --hitl-text-secondary: #475569;        /* slate-600 */
+  --hitl-border:         #e2e8f0;        /* slate-200 */
+  --hitl-input:          #f1f5f9;        /* slate-100 */
+}
+
+.dark {
+  /* Dark mode — SOC war-room aesthetic */
+  --hitl-base:           10 10 10;
+  --hitl-surface:        20 20 20;
+  --hitl-surface-hover:  31 31 31;
+  --hitl-pending:        255 204 0;
+  --hitl-approved:       52 199 89;
+  --hitl-rejected:       255 59 48;
+  --hitl-escalated:      255 59 48;
+  --hitl-active:         0 122 255;
+  --hitl-klein-blue:     0 47 167;
+  --hitl-muted:          115 115 115;
+  --hitl-secondary:      163 163 163;
+
+  --hitl-text-primary:   #ffffff;
+  --hitl-text-secondary: #a3a3a3;
+  --hitl-border:         rgba(255,255,255,0.1);
+  --hitl-input:          rgba(0,0,0,0.3);
+}
+
+/* =====================================================================
+   Base Styles
+   ===================================================================== */
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: rgb(var(--hitl-base));
+    color: var(--hitl-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--hitl-base));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--hitl-muted) / 0.3);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--hitl-muted) / 0.5);
+  }
+}
+
+/* =====================================================================
+   Component Classes
+   ===================================================================== */
+
+@layer components {
+  .stat-card {
+    @apply bg-hitl-surface border border-hitl-border p-5 transition-all duration-200;
+  }
+
+  .stat-card:hover {
+    @apply -translate-y-[2px];
+    border-color: rgb(var(--hitl-muted) / 0.3);
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-2.5 text-sm transition-colors duration-200 cursor-pointer;
+    color: var(--hitl-text-secondary);
+  }
+
+  .nav-item:hover {
+    color: var(--hitl-text-primary);
+    background: rgb(var(--hitl-secondary) / 0.08);
+  }
+
+  .nav-item.active {
+    color: var(--hitl-text-primary);
+    background: rgb(var(--hitl-secondary) / 0.08);
+    border-left: 2px solid var(--hitl-text-primary);
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 text-xs font-medium rounded-[2px] border;
+  }
+}
