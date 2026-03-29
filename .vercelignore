@@ -1,0 +1,41 @@
+# Dependencies
+node_modules
+__pycache__
+*.pyc
+.venv
+venv
+
+# Logs
+*.log
+backend.log
+frontend.log
+
+# Environment
+.env
+.env.local
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# Testing
+.pytest_cache
+test_reports
+tests
+
+# Build
+frontend/build
+frontend/node_modules
+
+# Git
+.git
+.gitignore
+
+# Misc
+.DS_Store
+*.tmp
+.emergent
+memory
+docs

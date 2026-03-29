@@ -1,0 +1,80 @@
+# ============================================================
+# HITL Gateway .gitignore
+# ============================================================
+
+# --- Python ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+dist/
+build/
+*.whl
+*.so
+
+# --- Virtual environment ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Environment / Secrets ---
+.env
+.env.*
+!.env.example
+local.settings.json
+
+# --- IDE / Editors ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# --- Testing ---
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+test_reports/
+*.cover
+.hypothesis/
+
+# --- Build artifacts ---
+frontend/build/
+frontend/.vercel/
+*.log
+
+# --- Auto-generated agent artifacts ---
+.emergent/
+.gitconfig
+memory/
+design_guidelines.json
+docs/design_guidelines.json
+
+# --- Documentation (exclude all except Guides, Setups, Roadmaps) ---
+docs/*
+!docs/FRONTEND_INTEGRATION_GUIDE.md
+!docs/TELEGRAM_SETUP.md
+!docs/ENTERPRISE_ROADMAP.md
+!docs/IMPROVEMENT_ROADMAP.md
+!docs/qr-repo.png
+!docs/qr-website.png
+
+# --- Misc ---
+test.c
+*.bak
+*.tmp
+*.temp
